@@ -11,11 +11,8 @@ const openaiKey = process.env.OPENAI_API_KEY;
 
 export const handler = async (event) => {
     try {
-
-        // Parse the body of the request
-        const requestBody = JSON.parse(event.body);
         
-        // Extract bucket name and key from the parsed body
+        const requestBody = JSON.parse(event.body);
         const { bucketName, key } = requestBody;
         
         const command = new GetObjectCommand({
@@ -45,7 +42,6 @@ export const handler = async (event) => {
     
         const vectorStore = await FaissStore.fromDocuments(documents, embeddings);
 
-        // Save the embeddings and other files locally
         const tempPath = '/tmp/embeddings';
         await vectorStore.save(tempPath);
 
@@ -54,14 +50,13 @@ export const handler = async (event) => {
         for (const file of files) {
             const filePath = path.join(tempPath, file);
             const fileBuffer = fs.readFileSync(filePath);
-            const s3Key = `embeddings/${file}`; // Set the destination key with the "embeddings" prefix
+            const s3Key = `embeddings/${file}`;
 
             const putCommand = new PutObjectCommand({
                 Bucket: bucketName,
                 Key: s3Key,
                 Body: fileBuffer
             });
-
             await s3.send(putCommand);
         }
 
