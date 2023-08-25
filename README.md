@@ -145,7 +145,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 1. The Serverless Framework doesn't seem to allow for ES6 modules so there is a workaround using two handlers, one that processes the .mjs file which seemed to work well.
 
-2. Please remember to add in the faiss-node layer to both functions or you will run into trouble. Look at this thread here:
+2. Please remember to add in the faiss-node layer to both functions or you will run into trouble. Look at this thread [here.](https://github.com/hwchase17/langchainjs/issues/1930#issuecomment-1646500643)
 
 ## Caution
 Monitor your AWS usage to avoid unexpected charges. Set up billing alerts in the AWS Billing Console.
