@@ -10,10 +10,7 @@ const openaiKey = process.env.OPENAI_API_KEY;
 
 export const handler = async (event) => {
     try {
-        // Parse the body of the request
         const requestBody = JSON.parse(event.body);
-        
-        // Extract properties from the parsed body
         const { question, chatHistory, bucketName } = requestBody;
 
         // Create a directory in /tmp to store the embeddings files
@@ -63,7 +60,6 @@ export const handler = async (event) => {
         } else {
             response = await chain.call({ question, chat_history: "" });
         }
-        console.log(response);
 
         return {
             statusCode: 200,
