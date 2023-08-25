@@ -1,0 +1,47 @@
+service: langchain-service
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-central-1
+  environment:
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutObject
+      Resource: "arn:aws:s3:::my-langchain-bucket/*"
+  apiGateway:
+    apiKeys:
+      - langchainAPIKey
+    usagePlan:
+      quota:
+        limit: 1000
+        offset: 2
+        period: MONTH
+      throttle:
+        burstLimit: 10
+        rateLimit: 1
+
+functions:
+  processFile:
+    handler: processEmbeddingsHandler.handler
+    timeout: 15
+    events:
+      - http:
+          path: process
+          method: post
+          private: true
+
+  processQuestion:
+    handler: processQuestionHandler.handler
+    timeout: 15
+    events:
+      - http:
+          path: question
+          method: post
+          private: true
+
+plugins:
+  - serverless-dotenv-plugin
