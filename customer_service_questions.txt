@@ -1,0 +1,116 @@
+q: how to contact customer support?
+a: If you can't find the answers you're looking for in our Help Centre, you can always contact our Customer Support. You can reach out to us via the Happy Socks Chatbot or by sending us a direct message on our official social media pages like Facebook, Instagram, or Twitter. Please note that we don't offer phone support. Although our main support language is English, we can also assist in German and Dutch. Remember to send only one query at a time and always include your order number.
+
+q: why can't I place my order or checkout on your website?
+a: There can be several reasons for this issue. Make sure to remove any special characters from checkout fields and refresh your browser. It might also help to try from a different device or clear cookies and cache. Ensure that you're using the correct regional website based on your shipping country. If none of these steps help, please contact our support.
+
+q: can I cancel my order or make changes to it after it has been placed?
+a: We process and pack orders quickly, so making changes can be challenging. If you need to make any adjustments, please reach out to us immediately.
+
+q: I haven't received a confirmation email after placing an order. what does this mean?
+a: First, check your spam folder. If you haven't received the confirmation after 24 hours, contact us, and we'll check the status of your order.
+
+q: my order is missing a product. what should I do?
+a: We apologize for the oversight. Please contact us and provide your order number for swift assistance.
+
+q: I have received an incorrect item. what should I do?
+a: Please get in touch with us and provide your order number along with a picture of the incorrect item.
+
+q: I have received a faulty item. what should I do?
+a: If you bought the product online at HappySocks.com, contact us with a photo of the faulty item. If you purchased it from a retail store, it's best to reach out to them directly as they might have their warranty policies.
+
+q: what should I add in the "address 2nd line" field on the checkout page?
+a: This field is for additional address information like the company name, c/o, apartment number, district name, and so on. If your delivery address is straightforward, you can leave it blank.
+
+q: what should I do if my order is delayed?
+a: Begin by checking the estimated delivery time for your country in our Shipping overview. If your order surpasses this estimated time, please allow an additional five business days. If the delay continues, contact our support.
+
+q: how can I track my parcel?
+a: Once your order ships, we'll send you a tracking number in your shipping confirmation email. You can use this number to track your parcel through Deutsche Post or DHL, depending on your location.
+
+q: how long does the delivery take?
+a: Delivery times vary by country. Please refer to our Shipping overview for specifics.
+
+q: which countries do you ship to?
+a: A list of countries we ship to is available in our Shipping overview. Be aware that orders sent outside the European Union might incur additional fees like import VAT or customs duty.
+
+q: how much do you charge for shipping?
+a: For detailed shipping charges, please refer to our Shipping overview. If you're ordering from outside the European Union and refuse a high-value package, certain fees will be deducted from your refund.
+
+q: what happens if I refuse the package?
+a: For orders outside the European Union, refusing a high-value package means it gets returned to us. If this happens, specific charges will be deducted from your refund.
+
+q: how do i return my happy socks products?
+a: All items need to be returned in their original condition with all labels intact. Before returning your items, be sure to read our return policy thoroughly. Start by printing and filling out the Returns Form and including it in your return package. If you can't print, manually write the needed information on a piece of paper and include your order number. We emphasize that due to hygiene, we can't accept returns of our face covers.
+
+q: what is your return policy?
+a: You have a 30-day window, starting from the delivery date, to return products purchased from happysocks.com. For hygienic reasons, face covers can't be returned. Items from our online store cannot be returned at our retail or concept stores. The items should be unused with their labels intact. We don't provide free returns, so use your preferred shipping company for returns. We also don't cover the shipping charges for returns to promote sustainability. After we receive your return, it will be processed within 21 business days. You'll receive an email about your refund, which will take 1-3 bank days. The refund will be made to the original payment method used. If an exchange is what you're after, please make a new order and return the item you don't want. We don't cover lost items during the return shipping process.
+
+q: sizes
+a: Not sure about your size? Check our size guide on the product description page. Our unisex socks for adults come in sizes 36-40 and 41-46, with the Hysteria collection offering sizes 36-38 and 39-41, and the Dressed collection sizes ranging from 39-42 to 43-46. Our pool sliders sizes range from 36/37 to 46, and our adult swimwear is available from S to XXL. For kids, our sock sizes range from 0-12 months up to 7-9 years, and swimwear sizes from 2-3 years to 7-9 years. For dogs, all our socks are in size S/M.
+
+q: find a store
+a: Interested in visiting? Find our store locations on our website.
+
+q: currency & fees
+a: The currency displayed depends on your selected shipping country, which automatically sets the currency. Changing the currency is not an option, and shipping charges are added during checkout. Any currency value changes or conversion rates used by your bank or credit card company are not our responsibility. EU customers don't face any customs or import charges. In Norway, different rules apply based on order value, and more information is available on Posten's website.
+
+q: how can i pay for my order?
+a: You can pay using common methods like Visa, Mastercard, and PayPal. There are also local payment options based on your shipping country which you can find on the payment section during checkout. Once approved, the total amount gets deducted from your account. All transactions are secured and managed by Adyen international payment services, which ensure safe and encrypted connections.
+
+q: how do i use my discount code?
+a: To use your discount code, enter it in the "Add a discount code" field in your shopping cart ensuring there are no extra spaces. After entering, click "Apply" and your discount will be shown in the total order value. If it doesn't work, codes are only valid on regular priced products and can't be used on discounted items, combined with other offers, or used on Limited/Special Editions. Only one code is allowed per order. Each code has its own terms, so check where you found it for details. If issues persist, contact our Support Team.
+
+q: what are the conditions for campaigns & offers?
+a: All campaigns come with unique terms and conditions. In general, they're valid for a set period and can't be applied outside of this. They don't work on Limited/Special Editions or already discounted items. Discounts are either applied automatically or with a code at checkout.
+
+q: can i have my order gift wrapped or add a personal message?
+a: Currently, we don't offer gift wrapping or the option to add personal messages. However, we might provide this service in the future.
+
+q: happy socks gift boxes
+a: Our gift boxes are pre-packed and are sold with the exact pairs of Happy Socks shown on the product page. Contents can't be changed or personalized, and gift boxes can't be bought separately. If you're interested in an empty gift box, check out our flat-pack gift boxes on the website.
+
+q: face covers
+a: People older than 2 can wear face masks in public where it's hard to maintain social distance. They're not substitutes for medical masks or other health recommendations. Those under 2, or those who have trouble breathing, should not wear them. They don't protect the wearer but can prevent spread. Non-medical covers reduce face touching and possible transmission. Removing them requires precautions like not touching the face and washing hands after. For more details, check WHO and CDC guidelines on mask usage. Before wearing, clean your hands, ensure the cover fits well but allows breathing. Don't use if it's wet, dirty, or damaged. Always wash before reuse and ensure children under 2 don't wear them.
+
+q: How should I wash and care for my Happy Socks?
+a: We are advocates for protecting our planet, and a step towards that is taking good care of what we own, including our socks. At Happy Socks, we strive to ensure our socks are of top-notch quality. However, the longevity might differ based on how you care for and handle them. For varieties like regular, sneaker, dressed, and kids socks, the advised washing temperature is 40°C/104°F. For our Hysteria, wool socks, and compression socks, the suggested temperature is 30°C/86°F. It's best to refrain from bleaching or ironing. And while our socks are robust, avoiding tumble drying can enhance their lifespan. A crucial tip for when you get a new pair: rather than tearing off the label, carefully cut the thread with scissors to prevent any damage.
+
+q: How should I wash and care for my underwear?
+a: We ensure our underwear meets the highest quality standards. The lifespan can vary based on how you care for them. All our underwear should be washed at 40°C/104°F. It's recommended to avoid bleaching or ironing. Just like our socks, all our products, even though durable, will have a longer life if you keep them out of the tumble dryer.
+
+q: How do you ensure the quality of your products?
+a: Quality is paramount at Happy Socks. We pay keen attention to our collections' production, using only top materials and designs. With rigorous attention to detail and AQL 2.5 inspection standards, we continually refine our product quality. Remember, the lifespan of our products can vary depending on their care and handling. Our care instructions are always available for reference.
+
+q: How are your products manufactured?
+a: Happy Socks products are manufactured in Turkey, Portugal, China, and Peru. We ensure our suppliers adhere to high standards concerning quality, social considerations, and environmental perspectives. Our collaboration with suppliers is tight-knit, involving regular visits and facility inspections. We make sure our suppliers undergo necessary audits, sign the Happy Socks Code of Conduct, and meet chemical safety requirements.
+
+q: What is the Happy Socks Code of Conduct?
+a: The Happy Socks Code of Conduct outlines our stipulations for environmental and social equity. The standards in our Code are founded on global protocols like the Universal Declaration of Human Rights, the UN Convention on the Rights of the Child, and the ILO 8 Core Conventions. You can delve into details by exploring our Code of Conduct.
+
+q: How should I wash and care for my Happy Socks?
+a: We are advocates for protecting our planet, and a step towards that is taking good care of what we own, including our socks. At Happy Socks, we strive to ensure our socks are of top-notch quality. However, the longevity might differ based on how you care for and handle them. For varieties like regular, sneaker, dressed, and kids socks, the advised washing temperature is 40°C/104°F. For our Hysteria, wool socks, and compression socks, the suggested temperature is 30°C/86°F. It's best to refrain from bleaching or ironing. And while our socks are robust, avoiding tumble drying can enhance their lifespan. A crucial tip for when you get a new pair: rather than tearing off the label, carefully cut the thread with scissors to prevent any damage.
+
+q: How should I wash and care for my underwear?
+a: We ensure our underwear meets the highest quality standards. The lifespan can vary based on how you care for them. All our underwear should be washed at 40°C/104°F. It's recommended to avoid bleaching or ironing. Just like our socks, all our products, even though durable, will have a longer life if you keep them out of the tumble dryer.
+
+q: How do you ensure the quality of your products?
+a: Quality is paramount at Happy Socks. We pay keen attention to our collections' production, using only top materials and designs. With rigorous attention to detail and AQL 2.5 inspection standards, we continually refine our product quality. Remember, the lifespan of our products can vary depending on their care and handling. Our care instructions are always available for reference.
+
+q: How are your products manufactured?
+a: Happy Socks products are manufactured in Turkey, Portugal, China, and Peru. We ensure our suppliers adhere to high standards concerning quality, social considerations, and environmental perspectives. Our collaboration with suppliers is tight-knit, involving regular visits and facility inspections. We make sure our suppliers undergo necessary audits, sign the Happy Socks Code of Conduct, and meet chemical safety requirements.
+
+q: What is the Happy Socks Code of Conduct?
+a: The Happy Socks Code of Conduct outlines our stipulations for environmental and social equity. The standards in our Code are founded on global protocols like the Universal Declaration of Human Rights, the UN Convention on the Rights of the Child, and the ILO 8 Core Conventions. You can delve into details by exploring our Code of Conduct.
+
+q: What are Amfori BSCI, SEDEX, and Oeko-Tex?
+a: Amfori BSCI is a shared Code of Conduct that dictates workplace norms such as health, safety, work hours, and child labor prohibition. SEDEX allows companies to demonstrate ethical and socially sustainable production standards. Oeko-Tex, on the other hand, is a certification system for materials, verifying that they're produced without harmful substances. For comprehensive details, you can visit their respective websites.
+
+q: How do you monitor the origin of the cotton used in your products?
+a: We source our cotton from Turkey, India, and Peru. We mandate factories to provide documentation revealing the cotton source. Our close collaboration with suppliers ensures traceability, especially with certified organic cotton as per the Organic Content Standard.
+
+q: How do you ensure products are free from hazardous chemicals?
+a: Our suppliers are bound by REACH regulations, an EU standard for hazardous chemicals. To bolster environmental responsibility, we also require them to attain Oeko-Tex STANDARD 100 certification.
+
+q: Can you tell me about the Happy Socks newsletter?
+a: Certainly! If you're eager to be the first to learn about our new collaborations, exclusive offers, and sales, our newsletter has it all. Subscribing is simple: just enter your email on our site. If ever you wish to opt-out, every Happy Socks newsletter has an unsubscribe link at the bottom. After clicking, you'll be directed to a confirmation page. Remember, it might take up to a week for the unsubscription to be fully processed.
