@@ -78,7 +78,6 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 ## Deployment
 
-
 1. **Clone the Repository**: If you haven't already, clone the repository to your local machine:
    
     ```bash
@@ -95,15 +94,23 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
   
   ```bash
   npm install
+  
 - If you haven't installed the Serverless Framework globally, do so with:
   
   ```bash
   npm install -g serverless
 
-4. **Environment Variables**: Create an `.env` file at the root of your project directory and set your OpenAI API key:
-   
+4. **Environment Variables**: 
+
+- Create an `.env` file at the root of your project directory and set your OpenAI API key:
+
     ```bash
     OPENAI_API_KEY=your_openai_api_key_here
+
+- If you are having issues with your environment variables please use the terminal to set them instead.
+
+    ```bash
+    export OPENAI_API_KEY="yourkeyhere"
 
 6. **AWS Credentials**: Configure the Serverless Framework with your AWS credentials:
 
@@ -137,9 +144,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 8. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions. Avery annoying workaround to a bug somewhere when using Langchain. See the zip file in the root folder. You will run into issues with the node-faiss library if you don't do this.
 
-9. **Test it out** If you are having issues with your environment variables please use the terminal to set them.
-      ```bash
-     export OPENAI_API_KEY="yourkeyhere"
+9. **Test it out**: via CURL, Postman or within your application.
 
 ## Notes 
 
