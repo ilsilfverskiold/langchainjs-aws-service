@@ -23,7 +23,7 @@ Upon successful deployment, you will have two primary API endpoints:
     // { "text": " Yes, you can pay with PayPal. You can find this option on the payment section during checkout."}
 
 
-## Setup & Deployment
+## Setup
 
 ### Prerequisites
 
@@ -70,7 +70,8 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 3. Create an embeddings folder within this bucket (this is where we'll set the faiss.index and docstore.json that will be created with the .txt file)
 
-### Steps
+## Deployment
+
 
 1. **Clone the Repository**: If you haven't already, clone the repository to your local machine:
     ```bash
@@ -94,10 +95,11 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     OPENAI_API_KEY=your_openai_api_key_here
 
 5. **AWS Credentials**: Configure the Serverless Framework with your AWS credentials:
+
     ```bash
     serverless config credentials --provider aws --key YOUR_AWS_KEY --secret YOUR_AWS_SECRET
 
-6. **Tweak the YAML File**: 
+7. **Tweak the YAML File**: 
 - I've set the permissions of the lambda to only my-langchain-bucket. You need to change this accordingly. See the serverless.yml file.
     ```YAML
     Resource: "arn:aws:s3:::my-langchain-bucket/*"
@@ -120,12 +122,9 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 8. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions. Avery annoying workaround to a bug somewhere when using Langchain. See the zip file in the root folder. You will run into issues with the node-faiss library if you don't do this.
 
-9. **Test it out**
-
-**If you are having issues with your environment variables please use the terminal to set them.**
-    ```bash
-    export OPENAI_API_KEY="yourkeyhere"
-
+9. **Test it out** If you are having issues with your environment variables please use the terminal to set them.
+      ```bash
+     export OPENAI_API_KEY="yourkeyhere"
 
 ## Notes 
 
