@@ -1,5 +1,9 @@
 # Langchain AWS Lambda Service
-This project uses NodeJS 18 with AWS Lambda in conjunction with the AWS SDK v3 via the Serverless Framework. We're utilizing ES6 modules for a more modern development approach. This service is designed to process text files with Langchain allowing us to use these text files to ask questions with OpenAI. It's worth noting that there might be challenges with very large text files due to the current workarounds. However, for most cases it will work well.
+This project uses NodeJS 18 with AWS Lambda in conjunction with the AWS SDK v3 via the Serverless Framework. 
+
+This service is designed to process text files with Langchain allowing us to use these text files to ask questions with OpenAI. 
+
+It's worth noting that there might be challenges with very large text files due to the current workarounds. However, for most cases it will work well.
 
 ## Outcomes
 
@@ -23,19 +27,20 @@ Upon successful deployment, you will have two primary API endpoints:
     // { "text": " Yes, you can pay with PayPal. You can find this option on the payment section during checkout."}
 
 
-## Setup & Deployment
+## Setup
 
 ### Prerequisites
 
-**NodeJS:** Ensure you have NodeJS 18.x installed.
-**Serverless Framework:** This is used to deploy the project to AWS.
-**AWS Account:** Ensure you have an AWS account and have set up an IAM user with the necessary permissions.
-**OpenAI API Key:** You'll get an API key via platform.openai.com.
-**S3 Bucket:** Create a new bucket directly in S3 with your .txt file.
+- **NodeJS:** Ensure you have NodeJS 18.x installed.
+- **Serverless Framework:** This is used to deploy the project to AWS.
+- **AWS Account:** Ensure you have an AWS account and have set up an IAM user with the necessary permissions.
+- **OpenAI API Key:** You'll get an API key via platform.openai.com.
+- **S3 Bucket:** Create a new bucket directly in S3 with your .txt file.
 
 #### AWS Account
 
 1. If you don't have an account, create one and enable MFA. Then create a new IAM user and give it the appropriate permissions.
+   
     ```bash
     {
         "Version": "2012-10-17",
@@ -58,7 +63,8 @@ Upon successful deployment, you will have two primary API endpoints:
             }
         ]
     }
-2. Download the CSV files containing AWS keys. We'll need these to give the Serverless Framework the ability to create our application.
+    
+3. Download the CSV files containing AWS keys. We'll need these to give the Serverless Framework the ability to create our application.
 
 #### S3 Bucket
 
@@ -70,44 +76,55 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 3. Create an embeddings folder within this bucket (this is where we'll set the faiss.index and docstore.json that will be created with the .txt file)
 
-### Steps
+## Deployment
+
 
 1. **Clone the Repository**: If you haven't already, clone the repository to your local machine:
+   
     ```bash
     git clone https://github.com/ilsilfverskiold/langchain-embeddings-serverless.git
 
-2. **Navigate to the Directory**: Once cloned, navigate to the project directory:
+3. **Navigate to the Directory**: Once cloned, navigate to the project directory:
+   
     ```bash
     cd langchain-embeddings-serverless
 
-3. **Install Dependencies**:
+5. **Install Dependencies**:
 - First, ensure you have Node.js installed. This project requires Node.js 18.x.
 - Install the necessary project dependencies:
+  
   ```bash
   npm install
 - If you haven't installed the Serverless Framework globally, do so with:
+  
   ```bash
   npm install -g serverless
 
 4. **Environment Variables**: Create an `.env` file at the root of your project directory and set your OpenAI API key:
+   
     ```bash
     OPENAI_API_KEY=your_openai_api_key_here
 
-5. **AWS Credentials**: Configure the Serverless Framework with your AWS credentials:
+6. **AWS Credentials**: Configure the Serverless Framework with your AWS credentials:
+
     ```bash
     serverless config credentials --provider aws --key YOUR_AWS_KEY --secret YOUR_AWS_SECRET
 
-6. **Tweak the YAML File**: 
+7. **Tweak the YAML File**: 
 - I've set the permissions of the lambda to only my-langchain-bucket. You need to change this accordingly. See the serverless.yml file.
+  
     ```YAML
     Resource: "arn:aws:s3:::my-langchain-bucket/*"
+   
 - We're setting an API key as well here that you'll recieve along with your endpoints once the application has been deployed successfully. See the Serverless docs on API Key [here](https://www.serverless.com/framework/docs/providers/aws/events/apigateway#setting-api-keys-for-your-rest-api)
 
 7. **Deployment**: Deploy your service to AWS.
+   
     ```bash
     serverless deploy
 
-8. **API Endpoints**: After a successful deployment, you'll receive the base URLs for your API endpoints along with an API key (set in the header as x-api-key)
+9. **API Endpoints**: After a successful deployment, you'll receive the base URLs for your API endpoints along with an API key (set in the header as x-api-key)
+    
     ```bash
     api keys:
         langchainAPIKey: xxxxxxx
@@ -120,12 +137,9 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 8. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions. Avery annoying workaround to a bug somewhere when using Langchain. See the zip file in the root folder. You will run into issues with the node-faiss library if you don't do this.
 
-9. **Test it out**
-
-**If you are having issues with your environment variables please use the terminal to set them.**
-    ```bash
-    export OPENAI_API_KEY="yourkeyhere"
-
+9. **Test it out** If you are having issues with your environment variables please use the terminal to set them.
+      ```bash
+     export OPENAI_API_KEY="yourkeyhere"
 
 ## Notes 
 
