@@ -142,9 +142,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
         processFile: langchain-service-dev-processFile (13 MB)
         processQuestion: langchain-service-dev-processQuestion (13 MB)
 
-8. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions if you're getting node-faiss errors. A very annoying workaround. See the zip file in the /layer folder. This layer has been provided directly [ewfian](https://github.com/ewfian).
-
-9. **Test it out**: via CURL, Postman or within your application.
+8. **Test it out**: via CURL, Postman or within your application.
 
     ```bash
     curl -X POST "https://YOUR_AWS_POST_URL_HERE/dev/process" \
@@ -157,6 +155,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
      -H "x-api-key: YOUR_API_KEY_HERE" \
      -d '{ "question": "can I pay with paypal?", "chatHistory": "", "bucketName": "my-langchain-bucket" }'
 
+9. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions if you're getting node-faiss errors. A very annoying workaround. See the zip file in the /layer folder. This layer has been provided directly [ewfian](https://github.com/ewfian).
 
 ## Notes 
 
