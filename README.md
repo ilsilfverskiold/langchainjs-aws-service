@@ -142,7 +142,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
         processFile: langchain-service-dev-processFile (13 MB)
         processQuestion: langchain-service-dev-processQuestion (13 MB)
 
-8. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions. Avery annoying workaround to a bug somewhere when using Langchain. See the zip file in the root folder. You will run into issues with the node-faiss library if you don't do this.
+8. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions. A very annoying workaround to a bug somewhere when using Langchain. See the zip file in the root folder. You will run into issues with the node-faiss library if you don't do this.
 
 9. **Test it out**: via CURL, Postman or within your application.
 

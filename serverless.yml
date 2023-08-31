@@ -41,6 +41,7 @@ functions:
       - http:
           path: question
           method: post
+          cors: true
           private: true
 
 plugins:
