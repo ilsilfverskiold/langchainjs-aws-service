@@ -3,8 +3,6 @@ This project uses NodeJS 18 with AWS Lambda in conjunction with the AWS SDK v3 v
 
 This service is designed to process text files with Langchain allowing us to use these text files to ask questions with OpenAI. Langchain will default to GPT-Turbo-3.5 but you may specify GPT-4.
 
-It's worth noting that there might be challenges with very large text files due to the current workarounds. However, for most cases it will work well.
-
 ## Outcomes
 
 Upon successful deployment, you will have two primary API endpoints:
