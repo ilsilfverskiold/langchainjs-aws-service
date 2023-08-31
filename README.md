@@ -18,8 +18,6 @@ Upon successful deployment, you will have two primary API endpoints:
      -H "x-api-key: YOUR_API_KEY_HERE" \
      -d '{ "bucketName": "my-langchain-bucket", "key": "customer_service_questions.txt" }'
 
-    Sample result:
-    ```json
     {
         "message": "Embeddings generated and uploaded successfully",
         "bucket": "my-langchain-bucket",
@@ -35,8 +33,6 @@ Upon successful deployment, you will have two primary API endpoints:
      -H "x-api-key: YOUR_API_KEY_HERE" \
      -d '{ "question": "can I pay with paypal?", "chatHistory": "", "bucketName": "my-langchain-bucket" }'
 
-    Sample result:
-    ```json
     {
         "text": "Yes, you can pay with PayPal. You can find this option on the payment section during checkout."
     }
