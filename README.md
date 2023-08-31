@@ -142,9 +142,21 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
         processFile: langchain-service-dev-processFile (13 MB)
         processQuestion: langchain-service-dev-processQuestion (13 MB)
 
-8. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions. A very annoying workaround to a bug somewhere when using Langchain. See the zip file in the root folder. You will run into issues with the node-faiss library if you don't do this. See node-faiss.zip file at the root directory here. This layer has been provided directly [ewfian](https://github.com/ewfian).
+8. **Add Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions if you're getting node-faiss errors. A very annoying workaround. See the zip file in the /layer folder. This layer has been provided directly [ewfian](https://github.com/ewfian).
 
 9. **Test it out**: via CURL, Postman or within your application.
+
+    ```bash
+    curl -X POST "https://YOUR_AWS_POST_URL_HERE/dev/process" \
+     -H "Content-Type: application/json" \
+     -H "x-api-key: YOUR_API_KEY_HERE" \
+     -d '{ "bucketName": "my-langchain-bucket", "key": "customer_service_questions.txt" }'
+
+    curl -X POST "https://YOUR_AWS_POST_URL_HERE/dev/question" \
+     -H "Content-Type: application/json" \
+     -H "x-api-key: YOUR_API_KEY_HERE" \
+     -d '{ "question": "can I pay with paypal?", "chatHistory": "", "bucketName": "my-langchain-bucket" }'
+
 
 ## Notes 
 

@@ -24,6 +24,12 @@ provider:
         burstLimit: 10
         rateLimit: 1
 
+layers:
+  faiss:
+    path: layer
+    compatibleRuntimes:
+      - nodejs18.x
+
 functions:
   processFile:
     handler: processEmbeddingsHandler.handler
@@ -33,6 +39,8 @@ functions:
           path: process
           method: post
           private: true
+    layers:
+      - { Ref: FaissLambdaLayer }
 
   processQuestion:
     handler: processQuestionHandler.handler
@@ -43,6 +51,5 @@ functions:
           method: post
           cors: true
           private: true
-
-plugins:
-  - serverless-dotenv-plugin
+    layers:
+      - { Ref: FaissLambdaLayer }
