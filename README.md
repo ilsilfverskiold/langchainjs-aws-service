@@ -13,18 +13,33 @@ Upon successful deployment, you will have two primary API endpoints:
    
    Sample request:
    ```bash
-   POST /process
-   Content-Type: application/json
-   { "bucketName": "my-langchain-bucket", "key": "customer_service_questions.txt" }
+   curl -X POST "https://YOUR_AWS_POST_URL_HERE/dev/process" \
+     -H "Content-Type: application/json" \
+     -H "x-api-key: YOUR_API_KEY_HERE" \
+     -d '{ "bucketName": "my-langchain-bucket", "key": "customer_service_questions.txt" }'
+
+    Sample result:
+    ```json
+    {
+        "message": "Embeddings generated and uploaded successfully",
+        "bucket": "my-langchain-bucket",
+        "directory": "embeddings"
+    }
 
 2. **Question-Answering Endpoint**: Enables you to ask questions based on the processed .txt file. The system can also consider past chat history for context.
    
    Sample request:
    ```bash
-   POST /question
-    Content-Type: application/json
-    { "question": "can I pay with paypal?", "chatHistory": "", "bucketName": "my-langchain-bucket" }
-    // { "text": " Yes, you can pay with PayPal. You can find this option on the payment section during checkout."}
+   curl -X POST "https://YOUR_AWS_POST_URL_HERE/dev/question" \
+     -H "Content-Type: application/json" \
+     -H "x-api-key: YOUR_API_KEY_HERE" \
+     -d '{ "question": "can I pay with paypal?", "chatHistory": "", "bucketName": "my-langchain-bucket" }'
+
+    Sample result:
+    ```json
+    {
+        "text": "Yes, you can pay with PayPal. You can find this option on the payment section during checkout."
+    }
 
 
 ## Setup
