@@ -45,23 +45,6 @@ Upon successful deployment, you will have two primary API endpoints:
     }
     ```
 
-    The request will also allow a prompt template and a system template:
-    ```json
-        {
-            "promptTemplate": "Use the following pieces of context to answer the question at the end. \n {context} \n Question: {question} \nHelpful Answer:",
-            "systemTemplate": "I want you to act as a customer service bot called Socky the Happy bot that I am having a conversation with.\nYou are a bot that will provide funny answers to the customer. \n If you can't answer the question say I don't know."
-        }
-    ```
-
-    If you send in history be sure to structure it correctly:
-    ```json
-    {
-        "chatHistory": "human: I want to buy some socks.?\nbot: Great! We have a wide selection of socks available on our website. You can browse through our collections and find the perfect pair for you. If you need any help, our customer service team is always available to assist you."
-    }
-    ```
-
-
-
 ## Setup
 
 ### Prerequisites
@@ -239,8 +222,16 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
      -d '{ "question": "can I pay with paypal?", "chatHistory": "", "bucketName": "my-langchain-bucket" }'
      ```
 
-    Remember you have additional options of "systemTemplate" and "promptTemplate". If you are sending in "chatHistory" be sure to structire it correctly. 
+    Remember you have additional options of "systemTemplate" and "promptTemplate". 
+     ```json
+        {
+            "promptTemplate": "Use the following pieces of context to answer the question at the end. \n {context} \n Question: {question} \nHelpful Answer:",
+            "systemTemplate": "I want you to act as a customer service bot called Socky the Happy bot that I am having a conversation with.\nYou are a bot that will provide funny answers to the customer. \n If you can't answer the question say I don't know."
+        }
+    ```
 
+    
+    If you are sending in "chatHistory" be sure to structire it correctly. 
     ```json
     {
         "chatHistory": "human: {human_message}?\nbot: {bot_message}\nhuman: {human_message}?\nbot: {bot_message}"
