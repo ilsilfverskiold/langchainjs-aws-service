@@ -20,6 +20,7 @@ Upon successful deployment, you will have two primary API endpoints:
      -H "x-api-key: YOUR_API_KEY_HERE" \
      -d '{ "bucketName": "my-langchain-bucket", "key": "customer_service_questions.txt" }'
     ```
+    Successful response:
     ```json
     {
         "message": "Embeddings generated and uploaded successfully",
@@ -37,6 +38,7 @@ Upon successful deployment, you will have two primary API endpoints:
      -H "x-api-key: YOUR_API_KEY_HERE" \
      -d '{ "question": "can I pay with paypal?", "chatHistory": "", "bucketName": "my-langchain-bucket" }'
     ```
+    Successful response:
     ```json
     {
         "text": "Yes, you can pay with PayPal. You can find this option on the payment section during checkout."
@@ -207,6 +209,15 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
     ```javascript
     const s3 = new S3Client({ region: "eu-central-1" }); // Adjust the region if necessary
+    ```
+- Set up the LLM Model (use either gpt-4, gpt-3.5-turbo-16k, gpt-3.5-turbo-32k)
+
+    ```javascript
+    const model = new OpenAI({
+      model_name: "gpt-3.5-turbo-16k",
+      openAIApiKey: openaiKey,
+      temperature: 0,
+    });
     ```
 
 9. **Deployment**: Deploy your service to AWS.

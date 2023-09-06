@@ -61,7 +61,7 @@ export const handler = async (event) => {
 
     // load the model, vector store, and memory
     const model = new OpenAI({
-      model_name: "gpt-4",
+      model_name: "gpt-3.5-turbo-16k",
       openAIApiKey: openaiKey,
       temperature: 0,
     });
