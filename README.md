@@ -102,13 +102,13 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     git clone https://github.com/ilsilfverskiold/langchain-embeddings-serverless.git
     ```
 
-3. **Navigate to the Directory**: Once cloned, navigate to the project directory:
+2. **Navigate to the Directory**: Once cloned, navigate to the project directory:
    
     ```bash
     cd langchain-embeddings-serverless
     ```
 
-5. **Install Dependencies**:
+3. **Install Dependencies**:
 - First, ensure you have Node.js installed. This project requires Node.js 18.x.
 - Install the necessary project dependencies:
   
@@ -130,13 +130,13 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     export OPENAI_API_KEY="yourkeyhere"
     ```
 
-6. **AWS Credentials**: Configure the Serverless Framework with your AWS credentials (the CSV file you downloaded from AWS):
+5. **AWS Credentials**: Configure the Serverless Framework with your AWS credentials (the CSV file you downloaded from AWS):
 
     ```bash
     serverless config credentials --provider aws --key YOUR_AWS_KEY --secret YOUR_AWS_SECRET
     ```
 
-7. **(Optional) Tweak the YAML File**: 
+6. **(Optional) Tweak the YAML File**: 
 - I've set the permissions for the lambda functions to my-langchain-bucket. This means the lambdas will be able to access this bucket. You need to change this accordingly. See the serverless.yml file.
   
     ```YAML
@@ -172,7 +172,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     ```
 
 
-8. **(Optional) Tweak the Code If Necessary**: 
+7. **(Optional) Tweak the Code If Necessary**: 
 
 - Look through the script processQuestion.mjs
     - To set your CORS headers. As of now you'll be able to access it via localhost:3000.
@@ -198,15 +198,15 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
         });
         ```
 
-9. **Deployment**: Deploy your service to AWS.
+8. **Deployment**: Deploy your service to AWS. This will take a minute or two.
    
     ```bash
     serverless deploy
     ```
 
-10. **Add Node-Faiss Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions if you're getting node-faiss errors. A very annoying workaround. See the zip file in the /layer folder. This layer has been provided directly [ewfian](https://github.com/ewfian). It should be set via your Serverless function but if you are still having issues, set it manually.
+9. **Add Node-Faiss Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions if you're getting node-faiss errors. A very annoying workaround. See the zip file in the /layer folder. This layer has been provided directly [ewfian](https://github.com/ewfian). Look at this thread [here.](https://github.com/hwchase17/langchainjs/issues/1930#issuecomment-1646500643) for more information. It should be set via your Serverless function but if you are still having issues, set it manually.
 
-11. **Test it out**: via CURL, Postman or within your application. 
+10. **Test it out**: via CURL, Postman or within your application. 
 
     ```bash
     curl -X POST "https://YOUR_AWS_POST_URL_HERE/dev/process" \
@@ -219,7 +219,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     curl -X POST "https://YOUR_AWS_POST_URL_HERE/dev/question" \
      -H "Content-Type: application/json" \
      -H "x-api-key: YOUR_API_KEY_HERE" \
-     -d '{ "question": "can I pay with paypal?", "chatHistory": "", "bucketName": "my-langchain-bucket" }'
+     -d '{ "question": "can I pay with paypal?", "bucketName": "my-langchain-bucket" }'
      ```
 
     Remember you have additional options of "systemTemplate" and "promptTemplate". 
@@ -229,9 +229,8 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
             "systemTemplate": "I want you to act as a customer service bot called Socky the Happy bot that I am having a conversation with.\nYou are a bot that will provide funny answers to the customer. \n If you can't answer the question say I don't know."
         }
     ```
-
     
-    If you are sending in "chatHistory" be sure to structire it correctly. 
+    If you are sending in "chatHistory" be sure to structure it correctly. 
     ```json
     {
         "chatHistory": "human: {human_message}?\nbot: {bot_message}\nhuman: {human_message}?\nbot: {bot_message}"
@@ -240,7 +239,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 ## Debugging
 
-Set up a NodeJS environment to debug. Use `verbose: true` in your chain. This will allow you to see step by step what the chain is doing and tweak if necessary.
+Set up a NodeJS environment to debug. Use `verbose: true` in your chain to log all events to the console. This will allow you to see step by step what the chain is doing and tweak if necessary.
 
     ```javascript
     const chain = ConversationalRetrievalQAChain.fromLLM(
@@ -257,13 +256,9 @@ Set up a NodeJS environment to debug. Use `verbose: true` in your chain. This wi
     );
     ```
 
-## Notes 
-
-1. See a full tutorial [here](https://medium.com/gitconnected/deploying-an-ai-powered-q-a-bot-on-aws-with-langchainjs-and-serverless-9361d0778fbd) that goes through this step by step.
+## Additional Notes 
 
 1. The Serverless Framework doesn't seem to allow for ES6 modules so there is a workaround using two handlers, one that processes the .mjs file which seemed to work well.
-
-2. Please remember to add in the faiss-node layer to both functions or you will run into trouble. Look at this thread [here.](https://github.com/hwchase17/langchainjs/issues/1930#issuecomment-1646500643)
 
 ## Caution
 Monitor your AWS usage to avoid unexpected charges. Set up billing alerts in the AWS Billing Console.
