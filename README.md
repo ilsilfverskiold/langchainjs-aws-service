@@ -254,6 +254,10 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 12. **Add Node-Faiss Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions if you're getting node-faiss errors. A very annoying workaround. See the zip file in the /layer folder. This layer has been provided directly [ewfian](https://github.com/ewfian). It should be set via your Serverless function but if you are still having issues, set it manually.
 
+## Debugging
+
+Set up a NodeJS environment to debug. Use verbose: true in your chain. This will allow you to see step by step what the chain is doing and tweak if necessary.
+
 ## Notes 
 
 1. See a full tutorial [here](https://medium.com/gitconnected/deploying-an-ai-powered-q-a-bot-on-aws-with-langchainjs-and-serverless-9361d0778fbd) that goes through this step by step.
