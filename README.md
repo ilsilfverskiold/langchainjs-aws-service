@@ -1,9 +1,9 @@
 # Langchain AWS Lambda Service
 This project uses NodeJS 18 with AWS Lambda in conjunction with the AWS SDK v3 via the Serverless Framework. 
 
-This service is designed to process text files with Langchain allowing us to use these text files to ask questions with OpenAI. Langchain will default to GPT-Turbo-3.5 but you may specify GPT-4.
+This service is designed to process text files with Langchain allowing us to use these text files to ask questions with OpenAI. This script uses GPT-Turbo-3.5 but you may specify GPT-4.
 
-Updated to include a prompt and system template. 
+Updated to include a prompt and system template that you can send in with your request.
 
 If you want to follow a full tutorial go [here](https://medium.com/gitconnected/deploying-an-ai-powered-q-a-bot-on-aws-with-langchainjs-and-serverless-9361d0778fbd).
 
@@ -141,25 +141,19 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
 
 4. **Environment Variables**: 
 
-- Create an `.env` file at the root of your project directory and set your OpenAI API key:
-
-    ```bash
-    OPENAI_API_KEY=your_openai_api_key_here
-    ```
-
-- If you are having issues with your environment variables please use the terminal to set them instead.
+- Set your OpenAI API key (get yours at platform.openai.com):
 
     ```bash
     export OPENAI_API_KEY="yourkeyhere"
     ```
 
-6. **AWS Credentials**: Configure the Serverless Framework with your AWS credentials:
+6. **AWS Credentials**: Configure the Serverless Framework with your AWS credentials (the CSV file you downloaded from AWS):
 
     ```bash
     serverless config credentials --provider aws --key YOUR_AWS_KEY --secret YOUR_AWS_SECRET
     ```
 
-7. **Tweak the YAML File**: 
+7. **(Optional) Tweak the YAML File**: 
 - I've set the permissions for the lambda functions to my-langchain-bucket. This means the lambdas will be able to access this bucket. You need to change this accordingly. See the serverless.yml file.
   
     ```YAML
@@ -169,7 +163,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
         - s3:GetObject
         - s3:PutObject
       Resource: "arn:aws:s3:::my-langchain-bucket/*"
-      ```
+    ```
    
 - We're setting an API key as well here that you'll recieve along with your endpoints once the application has been deployed successfully. See the Serverless docs on API Key [here](https://www.serverless.com/framework/docs/providers/aws/events/apigateway#setting-api-keys-for-your-rest-api)
 
@@ -179,7 +173,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
       - langchainAPIKey
     ```
 
-- I've set the usage plan of these endpoints, be sure to change them accordingly.
+- I've set the usage plan of these endpoints, be sure to change it accordingly.
 
     ```YAML
     apiGateway:
@@ -195,30 +189,31 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     ```
 
 
-8. **Tweak the Code If Necessary**: 
+8. **(Optional) Tweak the Code If Necessary**: 
 
-- Look through the script processQuestion.mjs to set your CORS headers. As of now you'll be able to access it via localhost:3000.
+- Look through the script processQuestion.mjs
+    - To set your CORS headers. As of now you'll be able to access it via localhost:3000.
 
-    ```javascript
-    headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
-        'Access-Control-Allow-Credentials': true,
-    }
-    ```
-- Set the correct region of your S3 bucket
+        ```javascript
+        headers: {
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Credentials': true,
+        }
+        ```
+    - Set the correct region of your S3 bucket
 
-    ```javascript
-    const s3 = new S3Client({ region: "eu-central-1" }); // Adjust the region if necessary
-    ```
-- Set up the LLM Model (use either gpt-4, gpt-3.5-turbo-16k, gpt-3.5-turbo-32k) it is by default using gpt-3.5-turbo-16k.
+        ```javascript
+        const s3 = new S3Client({ region: "eu-central-1" }); // Adjust the region if necessary
+        ```
+    - Set up the LLM Model (use either gpt-4, gpt-3.5-turbo-16k, gpt-3.5-turbo-32k) it is by default using gpt-3.5-turbo-16k.
 
-    ```javascript
-    const model = new OpenAI({
-      model_name: "gpt-3.5-turbo-16k",
-      openAIApiKey: openaiKey,
-      temperature: 0,
-    });
-    ```
+        ```javascript
+        const model = new OpenAI({
+            model_name: "gpt-3.5-turbo-16k",
+            openAIApiKey: openaiKey,
+            temperature: 0,
+        });
+        ```
 
 9. **Deployment**: Deploy your service to AWS.
    
@@ -226,18 +221,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     serverless deploy
     ```
 
-10. **API Endpoints**: After a successful deployment, you'll receive the base URLs for your API endpoints along with an API key (set in the header as x-api-key)
-    
-    ```bash
-    api keys:
-        langchainAPIKey: xxxxxxx
-    endpoints:
-        POST - https://xxxxxx.execute-api.eu-central-1.amazonaws.com/dev/process
-        POST - https://xxxxxx.execute-api.eu-central-1.amazonaws.com/dev/question
-    functions:
-        processFile: langchain-service-dev-processFile (13 MB)
-        processQuestion: langchain-service-dev-processQuestion (13 MB)
-    ```
+10. **Add Node-Faiss Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions if you're getting node-faiss errors. A very annoying workaround. See the zip file in the /layer folder. This layer has been provided directly [ewfian](https://github.com/ewfian). It should be set via your Serverless function but if you are still having issues, set it manually.
 
 11. **Test it out**: via CURL, Postman or within your application. 
 
@@ -263,11 +247,24 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     }
     ```
 
-12. **Add Node-Faiss Layer**: You need to go in directly to the AWS console and add a layers to your created lambda functions if you're getting node-faiss errors. A very annoying workaround. See the zip file in the /layer folder. This layer has been provided directly [ewfian](https://github.com/ewfian). It should be set via your Serverless function but if you are still having issues, set it manually.
-
 ## Debugging
 
-Set up a NodeJS environment to debug. Use verbose: true in your chain. This will allow you to see step by step what the chain is doing and tweak if necessary.
+Set up a NodeJS environment to debug. Use `verbose: true` in your chain. This will allow you to see step by step what the chain is doing and tweak if necessary.
+
+    ```javascript
+    const chain = ConversationalRetrievalQAChain.fromLLM(
+        model,
+        vectorStore.asRetriever(),
+        {
+            memory: memory,
+            // this is by default set to false
+            verbose: true,
+            qaChainOptions: {
+                ...
+            }
+        }
+    );
+    ```
 
 ## Notes 
 
