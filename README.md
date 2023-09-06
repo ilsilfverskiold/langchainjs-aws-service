@@ -210,7 +210,7 @@ This was the easiest choice but possible to tweak the processEmbeddings.mjs to a
     ```javascript
     const s3 = new S3Client({ region: "eu-central-1" }); // Adjust the region if necessary
     ```
-- Set up the LLM Model (use either gpt-4, gpt-3.5-turbo-16k, gpt-3.5-turbo-32k)
+- Set up the LLM Model (use either gpt-4, gpt-3.5-turbo-16k, gpt-3.5-turbo-32k) it is by default using gpt-3.5-turbo-16k.
 
     ```javascript
     const model = new OpenAI({
