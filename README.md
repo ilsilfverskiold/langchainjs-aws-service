@@ -5,7 +5,7 @@ This service is designed to process text files with Langchain allowing us to use
 
 Updated to include a prompt and system template that you can send in with your request.
 
-If you want to follow a full tutorial go [here](https://medium.com/gitconnected/deploying-an-ai-powered-q-a-bot-on-aws-with-langchainjs-and-serverless-9361d0778fbd).
+If you want to follow a full tutorial and see the end result go [here](https://medium.com/gitconnected/deploying-an-ai-powered-q-a-bot-on-aws-with-langchainjs-and-serverless-9361d0778fbd).
 
 ## Outcomes
 
@@ -53,7 +53,8 @@ Upon successful deployment, you will have two primary API endpoints:
 - **Serverless Framework:** This is used to deploy the project to AWS.
 - **AWS Account:** Ensure you have an AWS account and have set up an IAM user with the necessary permissions.
 - **OpenAI API Key:** You'll get an API key via platform.openai.com.
-- **S3 Bucket:** Create a new bucket directly in S3 with your .txt file.
+- **A Formatted Text File:** See the two examples `customer_service_questions.txt` and `customer_service_questions2.txt`
+- **S3 Bucket:** Create a new bucket directly in S3 with your .txt file and then add an empty folder called `/embeddings` in this bucket.
 
 #### AWS Account
 
