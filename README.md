@@ -5,8 +5,6 @@ This service is designed to process text files with Langchain allowing us to use
 
 Updated to include a prompt and system template that you can send in with your request.
 
-If you want to follow a full tutorial and see the end result go [here](https://medium.com/gitconnected/deploying-an-ai-powered-q-a-bot-on-aws-with-langchainjs-and-serverless-9361d0778fbd).
-
 ## Outcomes
 
 Upon successful deployment, you will have two primary API endpoints:
